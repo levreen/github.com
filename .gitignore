@@ -12,3 +12,5 @@
 vendor/ 
 # Logs
 *.log
+# air config
+*.air.toml
