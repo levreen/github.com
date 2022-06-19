@@ -32,3 +32,5 @@ func GetFloats(fileName string) ([2]float64, error) {
 	}
 	return numbers, nil
 }
+
+// There's an error the array takes more argument than what was declared.
