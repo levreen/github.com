@@ -1,6 +1,6 @@
 # github.com
 
-This is my first time using Git ing Github. 
+This is my first time using Git in Github. 
 
 ## Subheader
 
