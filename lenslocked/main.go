@@ -3,14 +3,27 @@ package main
 import (
 	"chi"
 	"fmt"
+	"html/template"
+	"log"
 	"net/http"
+	"path/filepath"
 )
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	// bio := "<script>alert('Haha, youve been h4x0r3d!');</script>"
-	bio := "&lt;script&gt;alert(&quot;Hi!&quot;);&lt;/script&gt;"
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	fmt.Fprint(w, "<h1>Welcome to my Terrific site!</h1><p>Bio:"+bio+"</p>")
+	tplPath := filepath.Join("templates", "home.gohtml")
+	tpl, err := template.ParseFiles(tplPath)
+	if err != nil {
+		log.Printf("parsing template: %v", err)
+		http.Error(w, "There was an error parsing the template.", http.StatusInternalServerError)
+		return
+	}
+	err = tpl.Execute(w, nil)
+	if err != nil {
+		log.Printf("executing template: %v", err)
+		http.Error(w, "There was an error executing the template.", http.StatusInternalServerError)
+		return
+	}
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
@@ -27,7 +40,7 @@ func main() {
 	r := chi.NewRouter()
 	r.Get("/", homeHandler)
 	r.Get("/contact/", contactHandler)
-	r.Get("/fag/", faqHandler)
+	r.Get("/faq", faqHandler)
 	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Page not found", http.StatusNotFound)
 	})

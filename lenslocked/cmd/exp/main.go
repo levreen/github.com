@@ -21,8 +21,8 @@ func main() {
 		Bio:  "<script>alert('Haha, youve been h4x0r3d!');</script>",
 	}
 
-	err1 := t.Execute(os.Stdout, user)
-	if err1 != nil {
-		panic(err1)
+	err = t.Execute(os.Stdout, user)
+	if err != nil {
+		panic(err)
 	}
 }
