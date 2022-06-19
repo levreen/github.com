@@ -1,14 +1,22 @@
+// average calculates the average of several numbers.
 package main
 
 import (
 	"fmt"
+	"log"
+
+	"github.com/headfirstgo/datafile"
 )
 
 func main() {
-	var total float64
-	weeks := [3]float64{71.8, 56.2, 89.5}
-	for _, val := range weeks {
-		total += val
+	numbers, err := datafile.GetFloats("data.txt")
+	if err != nil {
+		log.Fatal(err)
 	}
-	fmt.Println("average: ", total/float64(len(weeks)))
+	var sum float64 = 0
+	for _, number := range numbers {
+		sum += number
+	}
+	sampleCount := float64(len(numbers))
+	fmt.Printf("Average: %0.2f\n", sum/sampleCount)
 }
