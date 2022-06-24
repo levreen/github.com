@@ -10,15 +10,15 @@ type Address struct {
 
 // Subscriber exported type
 type Subscriber struct {
-	HomeAddress Address
-	Name        string
-	Rate        float64
-	Active      bool
+	Address // Anonymous Struct field.
+	Name    string
+	Rate    float64
+	Active  bool
 }
 
 // Employee exported type
 type Employee struct {
-	Name        string
-	Salary      float64
-	HomeAddress Address
+	Name    string
+	Salary  float64
+	Address // Anonymous Struct field.
 }
