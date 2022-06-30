@@ -11,17 +11,17 @@ type Date struct {
 
 // Getter methods
 
-// Getter method of Year
+// Year Getter method
 func (d *Date) Year() int {
 	return d.year
 }
 
-// Getter method of Month
+// Month Getter
 func (d *Date) Month() int {
 	return d.month
 }
 
-// Getter method of Day
+// Day Getter
 func (d *Date) Day() int {
 	return d.day
 }
