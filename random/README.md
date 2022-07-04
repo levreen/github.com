@@ -8,3 +8,13 @@ Goroutines allow for concurrency: pausing one task to work others.
 And in some situations they allow parallelism: working on mulitple tasks simultaneosly.
 
 Sitenote: In Linux, you need to set up credential manager for your Git to stop it for asking your credential time and again. 
+
+Go channel pauses the main goroutine for a set amount of time so the other goroutines can run. 
+
+We cannot use function return values in a **go** statement. 
+
+```go
+size = go responseSize("https://example.com") // You're saying, "go run this; I'm not going to wait"
+fmt.Println(size) // But then what is the return value? 
+
+```
