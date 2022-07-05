@@ -34,6 +34,10 @@ myChannel := make(chan float64)
 ```
 Channels make sure that the sender sent its value and the receiver received the value: synchronize.
 
+Composite types: slice, maps, structs.
+
+
+
 
 
 
