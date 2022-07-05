@@ -36,6 +36,11 @@ Channels make sure that the sender sent its value and the receiver received the 
 
 Composite types: slice, maps, structs.
 
+## Automated Test
+An automated test is a separate program that executes components of your main program, and verifies they behave as expected.
+
+
+
 
 
 
