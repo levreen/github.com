@@ -8,3 +8,5 @@ func JoinWithCommas(phrases []string) string {
 	result += phrases[len(phrases)-1]
 	return result
 }
+
+// This is it!
