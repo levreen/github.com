@@ -1,17 +1,28 @@
 package prose
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestTwoElement(t *testing.T) {
 	list := []string{"apple", "orange"}
-	if JoinWithCommas(list) != "apple and orange" {
-		t.Error("didn't mathc expected value")
+	want := "apple and orange"
+	got := JoinWithCommas(list)
+	if got != want {
+		t.Error(errorString(list, got, want))
 	}
 }
 
 func TestThreeElement(t *testing.T) {
 	list := []string{"apple", "orange", "pear"}
-	if JoinWithCommas(list) != "apple, orange, and pear" {
-		t.Error("didn't match expected value")
+	want := "apple, orange, and pear"
+	got := JoinWithCommas(list)
+	if got != want {
+		t.Error(errorString(list, got, want))
 	}
+}
+
+func errorString(list []string, got string, want string) string {
+	return fmt.Sprintf("JoinWaitCommas(%#v) = \"%s\", want \"%s\"", list, got, want)
 }
