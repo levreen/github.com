@@ -8,3 +8,8 @@
     test to ensure that it passes.
 ## (3) Refactor your code
     Now, you're free to refactor your coe, to change and improve it, however you please. 
+
+```git
+$ git config --global credential.helper cache.
+$ git config --global credential.helper 'store --file ~/.my-credentials'
+```
