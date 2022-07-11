@@ -9,9 +9,13 @@
 ## (3) Refactor your code
     Now, you're free to refactor your coe, to change and improve it, however you please. 
 
-## This save me from incessant ask for logins. 
-## Update it works once. 
+## This save me of incessant ask for logins. 
 ```git
 $ git config --global credential.helper cache.
 $ git config --global credential.helper 'store --file ~/.my-credentials'
 ```
+## First-class functions
+    Functions in Go are treated as "first-class citizens." In a programming language with first-class functions,
+    functions can be assigned to variables, and then called from those variables.
+
+    
