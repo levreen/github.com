@@ -10,6 +10,7 @@
     Now, you're free to refactor your coe, to change and improve it, however you please. 
 
 ## This save me of incessant ask for logins. 
+## Only work once. You need to run the cmd again. 
 ```git
 $ git config --global credential.helper cache.
 $ git config --global credential.helper 'store --file ~/.my-credentials'
