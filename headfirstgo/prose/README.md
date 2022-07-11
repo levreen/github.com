@@ -9,7 +9,7 @@
 ## (3) Refactor your code
     Now, you're free to refactor your coe, to change and improve it, however you please. 
 
-## This save me of incessant ask for logins. 
+## This save me from incessant ask for logins. 
 ```git
 $ git config --global credential.helper cache.
 $ git config --global credential.helper 'store --file ~/.my-credentials'
